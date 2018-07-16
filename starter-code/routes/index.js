@@ -46,4 +46,16 @@ router.get('/rango', (req, res, next)=>{
   })
 });
 
+router.post('/filtro', (req, res, next)=>{
+  let bitcoindata = axios.create({
+    baseURL: "/rango?inicio=" + req.body.inputInicio + "&fin=" + req.body.inputFin
+   });
+  bitcoindata.get()
+  .then((response)=>{
+    res.json(response.data.bpi);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+});
 module.exports = router;

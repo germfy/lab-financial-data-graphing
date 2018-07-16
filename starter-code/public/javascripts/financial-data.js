@@ -1,10 +1,11 @@
 const bitcoinInfo = axios.create({
   baseURL: '/datos'
+  //baseURL: 'http://api.coindesk.com/v1/bpi/historical/close.json'
 });
 
 bitcoinInfo.get()
 .then((response)=>{
-  printTheChart(response.data);
+  printTheChart(response.data.bpi);
 })
 .catch((err)=>{
   console.log(err);

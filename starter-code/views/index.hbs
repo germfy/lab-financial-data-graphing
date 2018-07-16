@@ -9,7 +9,15 @@
   <body>
     <h1>{{title}}</h1>
     <p>Welcome to {{title}}</p>
-
+    <div>
+    <form method="post" action="/filtro" id="filtroform">
+      <label for="inputInicio">Fecha de incio</label>
+      <input name="inputInicio" placeholder="YYYY-MM-DD">
+      <label for="inputFin">Fecha de fin</label>
+      <input name="inputFin" placeholder="YYYY-MM-DD">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
     <canvas id="myChart"></canvas>
   </body>
   <script src="/javascripts/financial-data.js" charset="utf-8"></script>
